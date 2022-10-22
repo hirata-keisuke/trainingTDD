@@ -7,4 +7,4 @@ class MoneyTest(unittest.TestCase) :
 
         five = Dollar(5)
         five.times(2)
-        self.assertEquals(10, five.amount)
+        self.assertEqual(10, five.amount)
