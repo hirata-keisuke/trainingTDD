@@ -1,3 +1,4 @@
+from money.src.Money import Dollar
 import unittest
 
 class MoneyTest(unittest.TestCase) :
