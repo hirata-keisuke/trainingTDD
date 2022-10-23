@@ -1,4 +1,6 @@
-class Franc:
+from money.src.Money import Money
+
+class Franc(Money):
 
     def __init__(self, amount: int):
         self.__amount = amount
