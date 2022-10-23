@@ -6,4 +6,4 @@ class Franc(Money):
         super().__init__(amount)
 
     def times(self, multiplier: int):
-        return Franc(self._amount * multiplier)
+        return self.__class__(self._amount * multiplier)
