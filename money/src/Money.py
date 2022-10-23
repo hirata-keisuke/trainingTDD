@@ -18,11 +18,12 @@ class Money:
     def currency(self) -> str:
         return self._currency
 
-    @classmethod
-    def dollar(self, amount: int):
+    @staticmethod
+    def dollar(amount: int):
         return Dollar(amount)
-    @classmethod
-    def franc(self, amount: int):
+
+    @staticmethod
+    def franc(amount: int):
         return Franc(amount)
 
 class Dollar(Money):
