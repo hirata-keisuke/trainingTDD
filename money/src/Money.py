@@ -11,7 +11,11 @@ class Money(metaclass=ABCMeta):
         return False
 
     @abstractmethod
-    def times(amount: int):
+    def times(self, amount: int):
+        pass
+
+    @abstractmethod
+    def currency(self) -> str:
         pass
 
     @classmethod
@@ -29,6 +33,9 @@ class Dollar(Money):
         
     def times(self, multiplier: int):
         return self.__class__(self._amount * multiplier)
+    
+    def currency(self):
+        return "USD"
         
 class Franc(Money):
 
@@ -37,3 +44,6 @@ class Franc(Money):
 
     def times(self, multiplier: int):
         return self.__class__(self._amount * multiplier)
+
+    def currency(self):
+        return "CHF"
