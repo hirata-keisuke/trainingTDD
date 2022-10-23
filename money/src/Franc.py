@@ -3,12 +3,7 @@ from money.src.Money import Money
 class Franc(Money):
 
     def __init__(self, amount: int):
-        self.__amount = amount
+        super().__init__(amount)
 
     def times(self, multiplier: int):
-        return Franc(self.__amount * multiplier)
-
-    def __eq__(self, other):
-        if isinstance(other, Franc):
-            return self.__dict__ == other.__dict__
-        return False
+        return Franc(self._amount * multiplier)
