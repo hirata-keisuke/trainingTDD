@@ -2,9 +2,9 @@ from abc import abstractmethod, ABCMeta
 
 class Money:
 
-    def __init__(self, _amount: int, _currency: str):
-        self._amount = _amount
-        self._currency = _currency
+    def __init__(self, amount: int, currency: str):
+        self._amount = amount
+        self._currency = currency
 
     def __eq__(self, other):
         if isinstance(other, self.__class__):
@@ -20,24 +20,24 @@ class Money:
 
     @staticmethod
     def dollar(amount: int):
-        return Dollar(amount)
+        return Dollar(amount, "USD")
 
     @staticmethod
     def franc(amount: int):
-        return Franc(amount)
+        return Franc(amount, "CHF")
 
 class Dollar(Money):
 
-    def __init__(self, amount: int):
-        super().__init__(amount, "USD")
+    def __init__(self, amount: int, currency: str):
+        super().__init__(amount, currency)
         
     def times(self, multiplier: int):
-        return self.__class__(self._amount * multiplier)
+        return Money.dollar(self._amount * multiplier)
         
 class Franc(Money):
 
-    def __init__(self, amount: int):
-        super().__init__(amount, "CHF")
+    def __init__(self, amount: int, currency: str):
+        super().__init__(amount, currency)
 
     def times(self, multiplier: int):
-        return self.__class__(self._amount * multiplier)
+        return Money.franc(self._amount * multiplier)
