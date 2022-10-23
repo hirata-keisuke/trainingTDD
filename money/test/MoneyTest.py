@@ -13,6 +13,8 @@ class MoneyTest(unittest.TestCase):
         self.assertTrue(Dollar(5) == Dollar(5))
         self.assertFalse(Dollar(5) == Dollar(6))
         self.assertFalse(Dollar(5) == None)
+        self.assertTrue(Franc(5) == Franc(5))
+        self.assertFalse(Franc(5) == Franc(6))
 
     def test_franc_multiplication(self) :
         five = Franc(5)
