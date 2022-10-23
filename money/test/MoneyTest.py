@@ -1,4 +1,4 @@
-from money.src.Money import Dollar
+from money.src.Dollar import Dollar
 import unittest
 
 class MoneyTest(unittest.TestCase) :
