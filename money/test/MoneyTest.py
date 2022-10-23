@@ -15,3 +15,4 @@ class MoneyTest(unittest.TestCase):
     def test_equality(self):
         self.assertTrue(Dollar(5) == Dollar(5))
         self.assertFalse(Dollar(5) == Dollar(6))
+        self.assertFalse(Dollar(5) == None)
