@@ -18,18 +18,8 @@ class Money:
 
     @staticmethod
     def dollar(amount: int):
-        return Dollar(amount, "USD")
+        return Money(amount, "USD")
 
     @staticmethod
     def franc(amount: int):
-        return Franc(amount, "CHF")
-
-class Dollar(Money):
-
-    def __init__(self, amount: int, currency: str):
-        super().__init__(amount, currency)
-
-class Franc(Money):
-
-    def __init__(self, amount: int, currency: str):
-        super().__init__(amount, currency)
+        return Money(amount, "CHF")
