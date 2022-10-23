@@ -1,5 +1,3 @@
-from money.src.Dollar import Dollar
-from money.src.Franc import Franc
 from abc import abstractmethod
 
 class Money:
@@ -12,8 +10,6 @@ class Money:
             return self.__dict__ == other.__dict__
         return False
 
-    def dollar(amount: int) -> Dollar:
-        return Dollar(amount)
-
-    def franc(amount: int) -> Franc:
-        return Franc(amount)
+    @abstractmethod
+    def times(amount: int):
+        pass
