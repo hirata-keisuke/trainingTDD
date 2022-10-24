@@ -6,4 +6,5 @@ class Bank:
         pass
 
     def reduce(self, source, to):
-        return Money.dollar(10)
+        amount = source.augend._amount + source.addend._amount
+        return Money(amount, to)
