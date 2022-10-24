@@ -23,3 +23,6 @@ class Money:
 
     def currency(self) -> str:
         return self._currency
+
+    def plus(self, added):
+        return Money(self._amount + added._amount, self._currency)
