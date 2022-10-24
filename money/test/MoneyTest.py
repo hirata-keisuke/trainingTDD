@@ -21,13 +21,13 @@ class MoneyTest(unittest.TestCase):
 
     def test_simple_additon(self):
         five = Money.dollar(5)
-        sum = five.plus(five)
+        sum_exp = five.plus(five)
         bank = Bank()
-        reduced = bank.reduce(sum, "USD")
+        reduced = bank.reduce(sum_exp, "USD")
         self.assertEqual(Money.dollar(10), reduced)
 
     def test_plus_returns_sum(self):
         five = Money.dollar(5)
-        sum = five.plus(five)
-        self.assertEqual(five, sum.augend)
-        self.assertEqual(five, sum.addend)
+        sum_exp = five.plus(five)
+        self.assertEqual(five, sum_exp.augend)
+        self.assertEqual(five, sum_exp.addend)

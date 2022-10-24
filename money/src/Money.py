@@ -1,5 +1,6 @@
 from abc import abstractmethod
 from money.src.Expression import Expression
+from money.src.Sum import Sum
 
 class Money(Expression):
 
@@ -25,5 +26,5 @@ class Money(Expression):
     def currency(self) -> str:
         return self._currency
 
-    def plus(self, added):
-        return Money(self._amount + added._amount, self._currency)
+    def plus(self, addend):
+        return Sum(self, addend)
