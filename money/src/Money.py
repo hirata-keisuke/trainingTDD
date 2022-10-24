@@ -1,6 +1,7 @@
-from abc import abstractmethod, ABCMeta
+from abc import abstractmethod
+from money.src.Expression import Expression
 
-class Money:
+class Money(Expression):
 
     def __init__(self, amount: int, currency: str):
         self._amount = amount
