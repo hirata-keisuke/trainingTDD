@@ -6,6 +6,4 @@ class Bank:
         pass
 
     def reduce(self, source, to: str):
-        if isinstance(source, Money):
-            return source
         return source.reduce(to)
