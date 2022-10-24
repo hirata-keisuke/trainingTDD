@@ -10,12 +10,6 @@ class Money:
         if other is None or not Money in other.__class__.mro(): return False
         return self.__dict__ == other.__dict__
 
-    def times(self, amount: int):
-        return Money(self._amount*amount, self._currency)
-
-    def currency(self) -> str:
-        return self._currency
-
     @staticmethod
     def dollar(amount: int):
         return Money(amount, "USD")
@@ -23,3 +17,9 @@ class Money:
     @staticmethod
     def franc(amount: int):
         return Money(amount, "CHF")
+
+    def times(self, amount: int):
+        return Money(self._amount*amount, self._currency)
+
+    def currency(self) -> str:
+        return self._currency
