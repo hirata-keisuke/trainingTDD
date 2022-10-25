@@ -9,3 +9,7 @@ class Expression(ABC):
     @abstractmethod
     def plus(self, addend):
         pass
+
+    @abstractmethod
+    def times(self, multiplier: int):
+        pass
