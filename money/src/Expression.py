@@ -1,6 +1,11 @@
-from abc import ABCMeta
+from abc import ABC, abstractmethod
 
-class Expression(metaclass=ABCMeta):
+class Expression(ABC):
 
-    def reduce(bank, to: str):
+    @abstractmethod
+    def reduce(self, bank, to: str):
+        pass
+
+    @abstractmethod
+    def plus(self, addend):
         pass
