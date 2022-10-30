@@ -32,3 +32,6 @@ class Money(Expression):
     def reduce(self, bank, to: str):
         rate = bank.calc_rate(self._currency, to)
         return Money(self._amount / rate, to)
+
+    def __add__(self, other):
+        return self.plus(other)
